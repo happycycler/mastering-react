@@ -3,7 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@sentry/react": "^6.2.2",
+    "@sentry/react-native": "^2.3.0",
+    "@sentry/tracing": "^6.2.2",
     "bootstrap": "^4.1.2",
+    "raven-js": "^3.26.4",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "1.1.4"
