@@ -24,9 +24,10 @@ class MovieForm extends Form {
     this.setState({ genres });
 
     const movieId = this.props.match.params.id;
+    const movie = getMovie(movieId);
+
     if (movie === "new") return;
 
-    const movie = getMovie(movieId);
     if (!movie) return this.props.history.replace("not-found");
 
     this.setState({ data: this.mapToViewModel(movie) });

@@ -1,4 +1,4 @@
-import { map } from "lodash";
+// import { map } from "lodash";
 import React from "react";
 
 const Select = ({ name, label, options, error, ...rest }) => {
