@@ -1,0 +1,4 @@
+{
+  "jwtPrivateKey": "1234",
+  "db": "mongodb://root:root@localhost:27017/vidly_tests?authSource=admin&readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=false"
+}

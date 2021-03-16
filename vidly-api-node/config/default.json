@@ -1,0 +1,6 @@
+{
+  "jwtPrivateKey": "unsecureKey",
+  "db": "mongodb://root:root@localhost:27017/vidly?authSource=admin&readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=false",
+  "port": "3900",
+  "requiresAuth": false
+}
