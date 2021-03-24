@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 
-const NavBar = () => {
+const NavBar = ({ user }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
@@ -20,33 +20,45 @@ const NavBar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/movies">
-                Movies
+          <div className="navbar-nav">
+            <NavLink className="nav-item nav-link" to="/movies">
+              Movies
+            </NavLink>
+
+            <NavLink className="nav-item nav-link" to="/customers">
+              Customers
+            </NavLink>
+
+            <NavLink className="nav-item nav-link" to="/rentals">
+              Rentals
+            </NavLink>
+
+            {!user && (
+              <React.Fragment>
+                <NavLink className="nav-item nav-link" to="/login">
+                  Login
+                </NavLink>
+
+                <NavLink className="nav-item nav-link" to="/register">
+                  Register
+                </NavLink>
+              </React.Fragment>
+            )}
+
+            {user && (
+              <NavLink className="nav-item nav-link" to="/logout">
+                Logout
               </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/customers">
-                Customers
+            )}
+          </div>
+
+          <div className="navbar-nav ml-auto">
+            {user && (
+              <NavLink className="nav-item nav-link" to="/profile">
+                {user.name}
               </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/rentals">
-                Rentals
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/login">
-                Login
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/register">
-                Register
-              </NavLink>
-            </li>
-          </ul>
+            )}
+          </div>
         </div>
       </div>
     </nav>
